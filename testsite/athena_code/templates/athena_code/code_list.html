@@ -1,0 +1,38 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Code List</h1>
+    {% if code_list %}
+    <ul>
+        {% for code in code_list %}
+            <li>
+                <a href="{{ code.get_absolute_url }}" style="font-size: 35px;">{{ code.name }}</a>
+                <ul style="list-style-type:none;">
+                    <li>
+                        <a class="btn btn-primary" href="{{ code.get_clone_url }}" target="_blank">
+                          Download?
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-primary" href="{{ code.get_configure_url }}">
+                           Create new configuration for this code
+                        </a>
+                    </li>
+                    <li>
+                       <select onChange="window.location.href=this.value" class="browser-default custom-select">
+                           <option value="." selected>Choose existing configuration</option>
+                           {% for configuration in configurations %}
+                            <option value="{{ configuration.get_update_url }}">
+                                {{ configuration.prob }}
+                            </option>
+                           {% endfor %}
+                       </select>
+                    </li>
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>There are no codes in the db.</p>
+    {% endif %}
+{% endblock %}
