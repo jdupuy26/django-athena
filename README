@@ -1,0 +1,24 @@
+An attempt at a web-driven version of Athena++
+The goal of this project is to have
+	1) a django-driven webpage that gives a "dev-like" interface for Athena++
+
+# TODO list for tasks in django-athena
+1) Create django site that can host an Athena dev interface
+2) Create tools for cloning the Athena repo onto this django site
+3) Allow for compilation and configuration of the Athena code through the site
+	a) Install tools/images so that this can be done within the container
+	b) required libs: g++, build-essential, make, fftw, HDF5 (plotting), openmpi,
+										gcc4.2 (openmp), see 
+										https://github.com/PrincetonUniversity/athena-public-version/wiki/Requirements 
+										for additional requirements
+4) Integration with running and plotting through the django site
+5) Dockerizing this django page
+
+
+Getting started 
+1) to start you must create a venv in python3, to do this run
+python3 -m venv <venv_name>
+2) Activate the venv
+source <venv_name>/bin/activate # verify python by doing "which python"
+3) Install requirements 
+pip install -r requirements.txt
