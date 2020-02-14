@@ -3,7 +3,6 @@ import os
 import subprocess
 
 from django.conf import settings
-from django.contrib.postgres.fields import JSONField
 from django.db import models
 from django.urls import reverse
 
@@ -18,7 +17,7 @@ class Repo(models.Model):
     url = models.URLField(max_length=500, help_text='Enter the url for the GH repo',
                            default='')
 
-    data = JSONField(blank=True, null=True, help_text=
+    data = models.CharField(max_length=6000, blank=True, null=True, help_text=
                      'Enter any additional data about the as a dict')
 
     def __str__(self):
@@ -37,7 +36,7 @@ class Fork(models.Model):
     url = models.URLField(max_length=500, help_text='Enter the url for the GH fork',
                            default='')
 
-    data = JSONField(blank=True, null=True, help_text=
+    data = models.CharField(max_length=6000, blank=True, null=True, help_text=
                      'Enter any additional data about the as a dict')
 
     code = models.OneToOneField('Code', help_text='Select a code for this fork',
@@ -76,7 +75,7 @@ class Branch(models.Model):
     repo = models.ForeignKey('Repo', help_text='Select a repo for this branch',
                              on_delete=models.SET_NULL, null=True)
 
-    data = JSONField(blank=True, null=True, help_text=
+    data = models.CharField(max_length=6000, blank=True, null=True, help_text=
                      'Enter any additional data about the as a dict')
 
     def __str__(self):
@@ -235,7 +234,7 @@ class Configuration(models.Model):
     input_file = models.CharField(help_text='Enter the input file for this configuration.',
                                   max_length=500, default='', blank=True)
 
-    input_dict = JSONField(blank=True, null=True,
+    input_dict = models.CharField(max_length=6000, blank=True, null=True,
                            help_text="Enter the input file for this problem as a dictionary."
                                      "The root keys should be the blocks of the input_file.")
 
