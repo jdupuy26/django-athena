@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Django-Athena Home</h1>
+    <p>Welcome to Django-Athena, a page developed by <em>John Dupuy</em>!<br><br>
+        Django-Athena is a
+        django-driven website that is designed to do 4 things with the Athena code:
+        configure, compile, execute, and analyze.
+    </p>
+    <p>Django-Athena has the following record counts:</p>
+    <ul>
+        <li><strong>Codes:</strong> {{ num_codes }}</li>
+        <li><strong>Configurations:</strong> {{ num_configurations }}</li>
+    </ul>
+{% endblock %}

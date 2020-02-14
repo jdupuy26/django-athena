@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Branch List</h1>
+    {% if branch_list %}
+    <ul>
+        {% for branch in branch_list %}
+            <li>
+                <a href="{{ branch.get_absolute_url }}">{{ branch.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>There are no repos in the db.</p>
+    {% endif %}
+{% endblock %}

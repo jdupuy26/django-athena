@@ -1,1 +1,5 @@
 djath_venv
+.idea
+*.pyc
+*.log
+local_settings.py

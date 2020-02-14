@@ -14,6 +14,13 @@ The goal of this project is to have
 4) Integration with running and plotting through the django site
 5) Dockerizing this django page
 
+# TODO 3/10/19
+1) Modify pages to only show the Code(s) since that is all that we need
+2) Add a button next to each Code that allows for configuration and compilation
+3) Use the CreateForm to create configuration, need to figure out how to make modifications
+		to that template
+
+
 
 Getting started 
 1) to start you must create a venv in python3, to do this run
@@ -22,3 +29,10 @@ python3 -m venv <venv_name>
 source <venv_name>/bin/activate # verify python by doing "which python"
 3) Install requirements 
 pip install -r requirements.txt
+
+
+# List of Apps
+1) athena_code
+	a) the athena_code app is designed to host exactly that, the athena code
+	b) it will get all the forks of the base athena repo, and then allow you to 
+		 select which fork you want to use to run your code

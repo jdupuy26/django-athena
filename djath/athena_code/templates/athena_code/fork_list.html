@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Fork List</h1>
+    {% if fork_list %}
+    <ul>
+        {% for fork in fork_list %}
+            <li>
+                <a href="{{ fork.get_absolute_url }}">{{ fork.name }}</a>
+                <a class="btn btn-primary" href="{{ fork.get_configure_url }}">
+                    Clone and configure this fork
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>There are no forks in the db.</p>
+    {% endif %}
+{% endblock %}

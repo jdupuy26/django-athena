@@ -1,0 +1,8 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Name: {{ fork.name }}</h1>
+  <p><strong>URL:</strong> <a href="{{ fork.url }}">{{ fork.url }}</a></p>
+  <a class="btn btn-primary" href="{{ fork.get_clone_url }}">Clone this fork</a>
+  <p><strong>Data:</strong> {{ fork.data }}</p>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Repo List</h1>
+    {% if repo_list %}
+    <ul>
+        {% for repo in repo_list %}
+            <li>
+                <a href="{{ repo.get_absolute_url }}">{{ repo.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>There are no repos in the db.</p>
+    {% endif %}
+{% endblock %}

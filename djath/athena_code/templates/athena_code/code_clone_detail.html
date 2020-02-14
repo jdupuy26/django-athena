@@ -1,0 +1,7 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Code: '{{ code.name }}' has been cloned!</h1>
+  <input class="button" onclick="{{ code.clone }}" hidden="True" />
+  <p><strong>Code path:</strong> '{{ code.path}}'</p>
+{% endblock %}

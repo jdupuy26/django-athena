@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Configuration List</h1>
+    {% if configuration_list %}
+    <ul>
+        {% for configuration in configuration_list %}
+            <li>
+                <a href="{{ configuration.get_absolute_url }}">{{ configuration.prob }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>There are no configurations in the db.</p>
+    {% endif %}
+{% endblock %}
