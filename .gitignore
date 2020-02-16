@@ -3,4 +3,7 @@
 *.pyc
 *.log
 *.sqlite3
+djath/frontend/static
+djath/frontend/dist
 local_settings.py
+node_modules
