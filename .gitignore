@@ -1,4 +1,4 @@
-djath_venv
+.djath_venv
 .idea
 *.pyc
 *.log

@@ -8,8 +8,8 @@ The goal of this project is to have
 3) Allow for compilation and configuration of the Athena code through the site
 	a) Install tools/images so that this can be done within the container
 	b) required libs: g++, build-essential, make, fftw, HDF5 (plotting), openmpi,
-										gcc4.2 (openmp), see 
-										https://github.com/PrincetonUniversity/athena-public-version/wiki/Requirements 
+										gcc4.2 (openmp), see
+										https://github.com/PrincetonUniversity/athena-public-version/wiki/Requirements
 										for additional requirements
 4) Integration with running and plotting through the django site
 5) Dockerizing this django page
@@ -22,17 +22,17 @@ The goal of this project is to have
 
 
 
-Getting started 
+Getting started
 1) to start you must create a venv in python3, to do this run
 python3 -m venv <venv_name>
 2) Activate the venv
 source <venv_name>/bin/activate # verify python by doing "which python"
-3) Install requirements 
+3) Install requirements
 pip install -r requirements.txt
 
 
 # List of Apps
 1) athena_code
 	a) the athena_code app is designed to host exactly that, the athena code
-	b) it will get all the forks of the base athena repo, and then allow you to 
+	b) it will get all the forks of the base athena repo, and then allow you to
 		 select which fork you want to use to run your code
