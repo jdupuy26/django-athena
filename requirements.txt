@@ -1,8 +1,10 @@
 backcall
 certifi
 chardet
+coverage
 decorator
 Django
+djangorestframework
 idna
 ipython
 ipython-genutils
@@ -11,6 +13,7 @@ parso
 pexpect
 pickleshare
 pkg-resources
+pre-commit
 prompt-toolkit
 ptyprocess
 Pygments

@@ -1,7 +1,11 @@
-from athena_code.models import Repo, Fork, Branch, Code, Configuration
-
+from athena_code.models import Branch
+from athena_code.models import Code
+from athena_code.models import Configuration
+from athena_code.models import Fork
+from athena_code.models import Repo
 from django.shortcuts import render
 from django.views import generic
+
 
 # Create your views here.
 def index(request):
@@ -11,13 +15,10 @@ def index(request):
     num_codes = Code.objects.all().count()
     num_configurations = Configuration.objects.all().count()
 
-    context = {
-        'num_codes': num_codes,
-        'num_configurations': num_configurations,
-    }
+    context = {"num_codes": num_codes, "num_configurations": num_configurations}
 
     # render HTML template index.html with the data in context
-    return render(request, 'index.html', context=context)
+    return render(request, "index.html", context=context)
 
 
 class RepoListView(generic.ListView):
@@ -49,7 +50,7 @@ class CodeListView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CodeListView, self).get_context_data(**kwargs)
-        context['configurations'] = Configuration.objects.all()
+        context["configurations"] = Configuration.objects.all()
         return context
 
 
@@ -67,9 +68,9 @@ class ConfigurationDetailView(generic.DetailView):
 
 class ConfigurationCreate(generic.CreateView):
     model = Configuration
-    fields = '__all__'
+    fields = "__all__"
 
 
 class ConfigurationUpdate(generic.UpdateView):
     model = Configuration
-    fields = '__all__'
+    fields = "__all__"
