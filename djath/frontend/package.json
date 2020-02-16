@@ -1,8 +1,9 @@
 {
-  "name": "patternfly-seed",
+  "name": "djath-frontend",
   "version": "0.0.1",
   "description": "An open source build scaffolding utility for web apps.",
   "main": "index.js",
+  "https_proxy": false,
   "repository": "https://github.com/patternfly/patternfly-react-seed.git",
   "license": "MIT",
   "private": true,

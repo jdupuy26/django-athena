@@ -4,6 +4,7 @@ chardet
 coverage
 decorator
 Django
+django-cors-headers
 djangorestframework
 idna
 ipython
