@@ -237,6 +237,10 @@ class Configuration(models.Model):
     HDF5_PARALLEL_PATH = "/usr/include/hdf5/openmpi/"
 
     # a configuration is associated with code
+    name = models.CharField(
+        help_text="Enter a name for this configuration.", max_length=500, default=""
+    )
+
     code = models.ForeignKey(
         "Code", help_text="Select code for this configuration", on_delete=models.SET_NULL, null=True
     )
