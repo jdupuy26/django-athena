@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { PageSection, Title, Page } from '@patternfly/react-core';
 
 
-class Dashboard extends Component<{}> {
+class Dashboard extends Component<{}, {data: any, loaded: boolean, placeholder: string}> {
 
   constructor(props) {
     super(props);
@@ -14,8 +14,7 @@ class Dashboard extends Component<{}> {
   }
 
   componentDidMount() {
-    // todo figure out how to get relative paths working
-    fetch("http://localhost:8000/api/repos/")
+    fetch("/api/repos/")
       .then(response => {
         if (response.status > 400) {
           return this.setState(() => {
@@ -52,11 +51,5 @@ class Dashboard extends Component<{}> {
   }
 }
 
-
-// const Dashboard: React.FunctionComponent<{}> = () => (
-//     <PageSection>
-//       <Title size="lg">Athena ++ Codes and Branches</Title>
-//     </PageSection>
-//   )
 
 export { Dashboard };

@@ -10,28 +10,28 @@ from .models import Repo
 class BranchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Branch
-        fields = ("name", "fork", "repo", "data")
+        fields = "__all__"
 
 
 class CodeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Code
-        fields = ("name", "path")
+        fields = "__all__"
 
 
 class ConfigurationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Configuration
-        fields = ("name", "code")
+        fields = "__all__"
 
 
 class ForkSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fork
-        fields = ("name", "url", "data", "code", "repo")
+        fields = "__all__"
 
 
 class RepoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Repo
-        fields = ("name", "url", "data")
+        fields = "__all__"
